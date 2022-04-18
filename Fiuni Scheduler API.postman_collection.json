@@ -1,0 +1,398 @@
+{
+	"info": {
+		"_postman_id": "0f9bcf07-1879-42dc-bf5c-9b046316c3d6",
+		"name": "Fiuni Scheduler API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Entries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/entries",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"entries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Entry",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/entries/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"entries",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/4",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Entry",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/entries/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"entries",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "firstName",
+							"value": "Juan",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Pereira",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "juankp4",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "ADMIN",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Entry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "Nueva Entrada",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Lorem Ipsum dolo sir amet",
+							"type": "text"
+						},
+						{
+							"key": "datetime",
+							"value": "2020-11-11 05:40:41.000",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "TASK",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "INPROGRESS",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/entries",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"entries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "firstName",
+							"value": "Admin",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Admin",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "admin2",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "ADMIN",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/users/7",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Entry",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "Nueva Entrada",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Lorem Ipsum dolo sir amet",
+							"type": "text"
+						},
+						{
+							"key": "datetime",
+							"value": "2020-11-11 05:40:41.000",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "TASK",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "DONE",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/entries/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"entries",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Tokens",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/tokens",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tokens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/sessions",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sessions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGVjayI6dHJ1ZSwiaWF0IjoxNjUwMjk1NjgwfQ.7CE475rAktgsM16HVJIWQ1dVanlnHH0wJou61D8F52I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/sessions",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sessions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
