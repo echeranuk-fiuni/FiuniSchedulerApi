@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const { getHome } = require('./api/home');
@@ -9,7 +10,7 @@ const config = require('./config');
 const { checkForAdminMiddleware } = require('./utils/permissions');
 const { userValidatorMiddleware, entryValidatorMiddleware } = require('./utils/validators');
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 // Parser config
 app.use(bodyParser.json());
