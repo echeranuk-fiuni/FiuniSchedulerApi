@@ -1,3 +1,4 @@
+const humps = require('humps');
 const { getAllEntries, getEntry: getDBEntry, createEntry: createDBEntry, updateEntry: updateDBEntry, deleteEntry: deleteDBEntry } = require("../db/queries/entries");
 const { getCurrentUserId } = require("../utils/tokens");
 
@@ -6,7 +7,7 @@ const listEntries = {
     callback: async (req, res) => {
         try {
             const entries = await getAllEntries(getCurrentUserId(req));
-            res.status(200).json(entries);
+            res.status(200).json(humps.camelizeKeys(entries));
         } catch (error) {
             res.status(500).json({message: error.message});
         }
@@ -18,7 +19,7 @@ const getEntry = {
     callback: async (req, res) => {
         try {
             const entry = await getDBEntry(getCurrentUserId(req), req.params.id);
-            res.status(200).json(entry);
+            res.status(200).json(humps.camelizeKeys(entry));
         } catch (error) {
             res.status(500).json({message: error.message});
         }
@@ -32,7 +33,7 @@ const createEntry = {
         const inputEntry = { title, description, datetime, type, status };
         try {
             const entry = await createDBEntry(getCurrentUserId(req), inputEntry);
-            res.status(200).json(entry);
+            res.status(200).json(humps.camelizeKeys(entry));
         } catch (error) {
             res.status(500).json({message: error.message});
         }
@@ -46,7 +47,7 @@ const updateEntry = {
         const inputEntry = { title, description, datetime, type, status };
         try {
             const entry = await updateDBEntry(getCurrentUserId(req), req.params.id, inputEntry);
-            res.status(200).json(entry);
+            res.status(200).json(humps.camelizeKeys(entry));
         } catch (error) {
             res.status(500).json({message: error.message});
         }

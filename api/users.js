@@ -1,3 +1,4 @@
+const humps = require('humps');
 const { getAllUsers, getUser: getDBUser, createUser: createDBUser, updateUser: updateDBUser, deleteUser: deleteDBUser } = require("../db/queries/users");
 
 const listUsers = {
@@ -5,7 +6,7 @@ const listUsers = {
     callback: async (req, res) => {
         try {
             const users = await getAllUsers();
-            res.status(200).json(users);
+            res.status(200).json(humps.camelizeKeys(users));
         } catch (error) {
             res.status(500).json({message: error.message});
         }
@@ -17,7 +18,7 @@ const getUser = {
     callback: async (req, res) => {
         try {
             const user = await getDBUser(req.params.id);
-            res.status(200).json(user);
+            res.status(200).json(humps.camelizeKeys(user));
         } catch (error) {
             res.status(500).json({message: error.message});
         }
@@ -31,7 +32,7 @@ const createUser = {
         const inputUser = { firstName, lastName, username, password, role };
         try {
             const user = await createDBUser(inputUser);
-            res.status(200).json(user);
+            res.status(200).json(humps.camelizeKeys(user));
         } catch (error) {
             res.status(500).json({message: error.message});
         }
@@ -45,7 +46,7 @@ const updateUser = {
         const inputUser = { firstName, lastName, username, role };
         try {
             const user = await updateDBUser(req.params.id, inputUser);
-            res.status(200).json(user);
+            res.status(200).json(humps.camelizeKeys(user));
         } catch (error) {
             res.status(500).json({message: error.message});
         }

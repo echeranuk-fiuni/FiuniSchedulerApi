@@ -10,7 +10,11 @@ const config = require('./config');
 const { checkForAdminMiddleware } = require('./utils/permissions');
 const { userValidatorMiddleware, entryValidatorMiddleware } = require('./utils/validators');
 const app = express();
+const cors = require('cors');
 const port = process.env.PORT;
+
+// Cors config
+app.use(cors());
 
 // Parser config
 app.use(bodyParser.json());
