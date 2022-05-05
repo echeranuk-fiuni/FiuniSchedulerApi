@@ -9,7 +9,7 @@ const login = {
             const user = await getUserByCredentials(username, password);
             if (user) {
                 const token = generateToken(user);
-                res.status(200).json({token});
+                res.status(200).json({...user, token});
             } else {
                 res.status(401).json({message: 'Autenticacion invalida'});
             }
